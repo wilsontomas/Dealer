@@ -24,12 +24,23 @@
             "tsConfig": "tsconfig.app.json",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "src/assets/dist/fonts"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "src/assets/dist/css/style.css",
+              "src/assets/dist/css/fontawesome.css",
+              "src/assets/dist/css/owl.css"
+              
+              
             ],
-            "scripts": []
+            "scripts": [
+             "./node_modules/jquery/dist/jquery.min.js",
+             "./node_modules/jquery/dist/jquery.min.map",
+             "./node_modules/bootstrap/dist/js/bootstrap.min.js",
+             "./node_modules/bootstrap/dist/js/bootstrap.min.js.map"
+            ]
           },
           "configurations": {
             "production": {
