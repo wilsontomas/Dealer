@@ -9,6 +9,9 @@ import { DetailComponent } from './pages/detail/detail.component';
 import { AboutComponent } from './pages/about/about.component';
 import { ContactComponent } from './pages/contact/contact.component';
 
+import {HttpClientModule} from "@angular/common/http"
+import { RouterModule } from '@angular/router';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,7 +23,9 @@ import { ContactComponent } from './pages/contact/contact.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]
