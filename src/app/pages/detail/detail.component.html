@@ -44,63 +44,25 @@
       </div>
     </div>
 
-    <div class="products">
+    <div class="products" *ngFor="let car of cars">
       <div class="container">
         <div class="row">
           <div class="col-md-6">
             <div>
-              <img src="../../../assets/dist/images/product-details-1-740x540.jpg" alt="" class="img-fluid wc-image">
+              <img [src]="car.CarImg" alt="" class="img-fluid wc-image imgSize">
             </div>
             <br>
-            <div class="row">
-              <div class="col-sm-4 col-6">
-                <div>
-                  <img src="assets/images/product-1-370x270.jpg" alt="" class="img-fluid">
-                </div>
-                <br>
-              </div>
-              <div class="col-sm-4 col-6">
-                <div>
-                  <img src="assets/images/product-2-370x270.jpg" alt="" class="img-fluid">
-                </div>
-                <br>
-              </div>
-              <div class="col-sm-4 col-6">
-                <div>
-                  <img src="assets/images/product-3-370x270.jpg" alt="" class="img-fluid">
-                </div>
-                <br>
-              </div>
-
-              <div class="col-sm-4 col-6">
-                <div>
-                  <img src="assets/images/product-4-370x270.jpg" alt="" class="img-fluid">
-                </div>
-                <br>
-              </div>
-              <div class="col-sm-4 col-6">
-                <div>
-                  <img src="assets/images/product-5-370x270.jpg" alt="" class="img-fluid">
-                </div>
-                <br>
-              </div>
-              <div class="col-sm-4 col-6">
-                <div>
-                  <img src="assets/images/product-6-370x270.jpg" alt="" class="img-fluid">
-                </div>
-                <br>
-              </div>
-            </div>
+            
           </div>
 
-          <div class="col-md-6">
+          <div class="col-md-6" >
             <form action="#" method="post" class="form">
               <ul class="list-group list-group-flush">
                <li class="list-group-item">
                     <div class="clearfix">
                          <span class="pull-left">Type</span>
 
-                         <strong class="pull-right">Used vehicle</strong>
+                         <strong class="pull-right">{{car.CarType}}</strong>
                     </div>
                </li>
 
@@ -108,7 +70,7 @@
                     <div class="clearfix">
                          <span class="pull-left">Make</span>
 
-                         <strong class="pull-right">Lorem ipsum dolor sit</strong>
+                         <strong class="pull-right">{{car.Make}}</strong>
                     </div>
                </li>
 
@@ -116,23 +78,17 @@
                     <div class="clearfix">
                          <span class="pull-left"> Model</span>
 
-                         <strong class="pull-right">Lorem ipsum dolor sit</strong>
+                         <strong class="pull-right">{{car.Model}}</strong>
                     </div>
                </li>
 
-               <li class="list-group-item">
-                    <div class="clearfix">
-                         <span class="pull-left">First registration</span>
-
-                         <strong class="pull-right">05/2010</strong>
-                    </div>
-               </li>
+               
 
                <li class="list-group-item">
                     <div class="clearfix">
                          <span class="pull-left">Mileage</span>
 
-                         <strong class="pull-right">5000 km</strong>
+                         <strong class="pull-right">{{car.Milleage}}</strong>
                     </div>
                </li>
 
@@ -140,7 +96,7 @@
                     <div class="clearfix">
                          <span class="pull-left">Fuel</span>
 
-                         <strong class="pull-right">Diesel</strong>
+                         <strong class="pull-right">{{car.Fuel}}</strong>
                     </div>
                </li>
 
@@ -148,7 +104,7 @@
                     <div class="clearfix">
                          <span class="pull-left">Engine size</span>
 
-                         <strong class="pull-right">1800 cc</strong>
+                         <strong class="pull-right">{{car.EngineSize}}</strong>
                     </div>
                </li>
 
@@ -156,7 +112,7 @@
                     <div class="clearfix">
                          <span class="pull-left">Power</span>
 
-                         <strong class="pull-right">85 hp</strong>
+                         <strong class="pull-right">{{car.MotorPower}}</strong>
                     </div>
                </li>
 
@@ -165,15 +121,15 @@
                     <div class="clearfix">
                          <span class="pull-left">Gearbox</span>
 
-                         <strong class="pull-right">Manual</strong>
+                         <strong class="pull-right">{{car.Gearbox}}</strong>
                     </div>
                </li>
 
                <li class="list-group-item">
                     <div class="clearfix">
-                         <span class="pull-left">Number of seats</span>
+                         <span class="pull-left">Seats</span>
 
-                         <strong class="pull-right">4</strong>
+                         <strong class="pull-right">{{car.SeatNumber}}</strong>
                     </div>
                </li>
 
@@ -181,7 +137,7 @@
                     <div class="clearfix">
                          <span class="pull-left">Doors</span>
 
-                         <strong class="pull-right">2/3</strong>
+                         <strong class="pull-right">{{car.Doors}}</strong>
                     </div>
                </li>
 
@@ -189,7 +145,7 @@
                     <div class="clearfix">
                          <span class="pull-left">Color</span>
 
-                         <strong class="pull-right">Black</strong>
+                         <strong class="pull-right">{{car.Color}}</strong>
                     </div>
                </li>
               </ul>

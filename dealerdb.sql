@@ -30,6 +30,7 @@ SET time_zone = "+00:00";
 DROP TABLE IF EXISTS `cars`;
 CREATE TABLE IF NOT EXISTS `cars` (
   `Id` int NOT NULL AUTO_INCREMENT,
+  `CarImg` varchar(300) NOT NULL,
   `CarType` varchar(50) NOT NULL,
   `Make` varchar(50) NOT NULL,
   `Model` varchar(50) NOT NULL,
@@ -48,9 +49,14 @@ CREATE TABLE IF NOT EXISTS `cars` (
 -- Dumping data for table `cars`
 --
 
-INSERT INTO `cars` (`Id`, `CarType`, `Make`, `Model`, `Milleage`, `Fuel`, `EngineSize`, `MotorPower`, `Gearbox`, `SeatNumber`, `Doors`, `Color`) VALUES
-(1, 'Used vehicle', 'Toyota', 'Camry 2018', '5000 km', 'Diesel', '1800 cc', '85 hp', 'Automatic', '4', '4', 'Red'),
-(2, 'New vehicle', 'Honda', 'Fit 2015', '0 km', 'Diesel', '1400 cc', '80 hp', 'Automatic', '4', '4', 'White');
+INSERT INTO `cars` (`Id`,`CarType`,`CarImg`,  `Make`, `Model`, `Milleage`, `Fuel`, `EngineSize`, `MotorPower`, `Gearbox`, `SeatNumber`, `Doors`, `Color`) VALUES
+(1, 'Used vehicle','../../../assets/dist/images/toyota.jfif', 'Toyota', 'Camry 2018', '5000 km', 'Diesel', '1800 cc', '85 hp', 'Automatic', '4', '4', 'Red'),
+(2, 'New vehicle','../../../assets/dist/images/honda.jfif', 'Honda', 'Fit 2015', '0 km', 'Diesel', '1400 cc', '80 hp', 'Automatic', '4', '4', 'White'),
+(3, 'New vehicle','../../../assets/dist/images/porch.jpg', 'Porsche', 'Carrera GT 2003', '0 km', 'Diesel', '1800 cc', '604 hp', 'Automatic', '2', '2', 'White'),
+(4, 'New vehicle','../../../assets/dist/images/lambor.jpg', 'Lamborghini', 'Veneno 2013', '0 km', 'Diesel', '1800 cc', '509 hp', 'Automatic', '2', '2', 'Black'),
+(5, 'New vehicle','../../../assets/dist/images/mustan.jfif', 'Mustang', 'GT 2017', '4000 km', 'Diesel', '1800 cc', '509 hp', 'Automatic', '2', '2', 'Red'),
+(6, 'User vehicle','../../../assets/dist/images/supra.jfif', 'Supra', 'MK5 2022', '0 km', 'Diesel', '1800 cc', '259 hp', 'Automatic', '2', '2', 'Yellow');
+
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

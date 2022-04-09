@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Car } from '../interfaces/car';
@@ -12,11 +12,12 @@ export class AutoServiceService {
 
    }
 getAllCards():Observable<Car[]>{
-  return this.http.get<Car[]>("");
+  return this.http.get<Car[]>("http://localhost:8080/api/");
 }
 
-getCarById(id:Number):Observable<Car>{
-  return this.http.get<Car>("");
+getCarById(id:Number):Observable<Car[]>{
+  let params = new HttpParams().set("envio",id.toString())
+  return this.http.get<Car[]>("http://localhost:8080/api/detail.php",{params});
 }
   
 }

@@ -12,12 +12,13 @@ export class DetailComponent implements OnInit {
 
   constructor(private route: ActivatedRoute,private servicio:AutoServiceService) {}
    id:Number | null=0;
-    car:Car={};
+    cars:Car[]=[]
   ngOnInit() {
      this.id =  Number(this.route.snapshot.paramMap.get('id'));
     
-    this.servicio.getCarById(this.id).subscribe((auto:any)=>{
-      this.car = auto;
+    this.servicio.getCarById(this.id).subscribe((auto:Car[])=>{
+      this.cars = auto;
+      console.log(this.cars)
     })
   }
 

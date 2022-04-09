@@ -12,11 +12,12 @@ export class ShopComponent implements OnInit {
   constructor(private carService:AutoServiceService) { }
   cars:Car[]=[];
   ngOnInit(): void {
-    //this.loadCars();
+    this.loadCars();
   }
   loadCars(){
-    this.carService.getAllCards().subscribe((datos:any)=>{
+    this.carService.getAllCards().subscribe((datos:Car[])=>{
       this.cars=datos;
+      console.log(datos)
     })
   }
 
