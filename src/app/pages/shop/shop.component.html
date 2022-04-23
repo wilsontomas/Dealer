@@ -5,7 +5,7 @@
     <header class="">
       <nav class="navbar navbar-expand-lg">
         <div class="container">
-          <a class="navbar-brand" href="index.html"><h2>Car Dealer <em>Website</em></h2></a>
+          <a class="navbar-brand" routerLink="/home"><h2>Car Dealer</h2></a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -34,7 +34,7 @@
         <div class="row">
           <div class="col-md-12">
             <div class="text-content">
-              <h4>Lorem ipsum dolor sit amet</h4>
+              <h4>Shop</h4>
               <h2>Cars</h2>
             </div>
           </div>
@@ -47,119 +47,47 @@
         <div class="row">
           <div class="col-md-3">
              <div class="contact-form">
+              <h3>Filter</h3>
+              <hr>
                 <form action="#">
                      <label>Used/New:</label>
                      
-                     <select class="form-control">
-                          <option value="">All</option>
-                          <option value="new">New vehicle</option>
-                          <option value="used">Used vehicle</option>
+                     <select (change)="filter($event,'used')" [(ngModel)]="used" [ngModelOptions]="{standalone: true}" class="form-control">
+                          <option value="1">All</option>
+                          <option value="2">New vehicle</option>
+                          <option value="3">Used vehicle</option>
                      </select>
 
-                     <label>Vehicle Type:</label>
+                     <label>Engine Type:</label>
                      
-                     <select class="form-control">
-                          <option value="">--All --</option>
-                          <option value="">--All --</option>
-                          <option value="">--All --</option>
-                          <option value="">--All --</option>
-                          <option value="">--All --</option>
+                     <select (change)="filter($event,'engine')" [(ngModel)]="engine" [ngModelOptions]="{standalone: true}" class="form-control">
+                      <option value="1">-- All --</option>
+                          <option value="2">Automatic</option>
+                          <option value="3">Manual</option>
+                          
                      </select>
 
-                     <label>Make:</label>
-                     
-                     <select class="form-control">
-                          <option value="">-- All --</option>
-                          <option value="">-- All --</option>
-                          <option value="">-- All --</option>
-                          <option value="">-- All --</option>
-                          <option value="">-- All --</option>
-                          <option value="">-- All --</option>
-                          <option value="">-- All --</option>
-                     </select>
 
-                     <label>Model:</label>
-                     
-                     <select class="form-control">
-                          <option value="">-- All --</option>
-                          <option value="">-- All --</option>
-                          <option value="">-- All --</option>
-                          <option value="">-- All --</option>
-                     </select>
-
-                     <label>Price:</label>
-                     
-                     <select class="form-control">
-                          <option value="">-- All --</option>
-                          <option value="">-- All --</option>
-                          <option value="">-- All --</option>
-                          <option value="">-- All --</option>
-                     </select>
-
-                     <label>Mileage:</label>
-                     
-                     <select class="form-control">
-                          <option value="">-- All --</option>
-                          <option value="">-- All --</option>
-                          <option value="">-- All --</option>
-                          <option value="">-- All --</option>
-                     </select>
-
-                     <label>Engine size:</label>
-                     
-                     <select class="form-control">
-                          <option value="">-- All --</option>
-                          <option value="">-- All --</option>
-                          <option value="">-- All --</option>
-                          <option value="">-- All --</option>
-                     </select>
-
-                     <label>Power:</label>
-                     
-                     <select class="form-control">
-                          <option value="">-- All --</option>
-                          <option value="">-- All --</option>
-                          <option value="">-- All --</option>
-                          <option value="">-- All --</option>
-                     </select>
-
-                     <label>Fuel:</label>
-                     
-                     <select class="form-control">
-                          <option value="">-- All --</option>
-                          <option value="">-- All --</option>
-                          <option value="">-- All --</option>
-                          <option value="">-- All --</option>
-                     </select>
-
-                     <label>Gearbox:</label>
-                     
-                     <select class="form-control">
-                          <option value="">-- All --</option>
-                          <option value="">-- All --</option>
-                          <option value="">-- All --</option>
-                          <option value="">-- All --</option>
-                     </select>
 
                      <label>Doors:</label>
                      
-                     <select class="form-control">
-                          <option value="">-- All --</option>
-                          <option value="">-- All --</option>
-                          <option value="">-- All --</option>
-                          <option value="">-- All --</option>
+                     <select (change)="filter($event,'doors')" [(ngModel)]="doors" [ngModelOptions]="{standalone: true}" class="form-control">
+                          <option value="1">-- All --</option>
+                          <option value="2">2</option>
+                          <option value="3">4</option>
+                         
                      </select>
 
                      <label>Number of seats:</label>
                      
-                     <select class="form-control">
-                          <option value="">-- All --</option>
-                          <option value="">-- All --</option>
-                          <option value="">-- All --</option>
-                          <option value="">-- All --</option>
+                     <select (change)="filter($event,'seat')" [(ngModel)]="seat" [ngModelOptions]="{standalone: true}" class="form-control">
+                          <option value="1">-- All --</option>
+                          <option value="2">2</option>
+                          <option value="3">4</option>
+                         
                      </select>
 
-                     <button type="submit" class="filled-button btn-block">Search</button>
+                   
                 </form>
              </div>
           </div>
@@ -169,7 +97,7 @@
 
 
 
-              <div class="col-md-6" *ngFor="let item of cars">
+              <div class="col-md-6" *ngFor="let item of carsFilter">
                 <div class="product-item">
                   <a routerLink="/detail/{{item.Id}}"><img [src]="item.CarImg" alt=""></a>
                   <div class="down-content">
@@ -202,7 +130,7 @@
         <div class="row">
           <div class="col-md-12">
             <div class="inner-content">
-              <p>Copyright © 2020 Company Name - Template by: <a href="https://www.phpjabbers.com/">PHPJabbers.com</a></p>
+              <p>Copyright © 2022</p>
             </div>
           </div>
         </div>

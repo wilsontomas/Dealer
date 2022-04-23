@@ -11,6 +11,7 @@ import { ContactComponent } from './pages/contact/contact.component';
 
 import {HttpClientModule} from "@angular/common/http"
 import { RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { RouterModule } from '@angular/router';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    FormsModule,
     RouterModule
   ],
   providers: [],
