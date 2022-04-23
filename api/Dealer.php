@@ -58,22 +58,7 @@
             if (!$result=$con -> query($query)) {
                 echo("Error description: " . $con -> error);
               }
-            /*while($row=mysqli_fetch_row($result))
-            {
-                echo $row[0] . " ";
-                echo $row[1] . " ";
-                echo $row[2] . " ";
-                echo $row[3] . " ";
-                echo $row[4] . " ";
-                echo $row[5] . " ";
-                echo $row[6] . " ";
-                echo $row[7] . " ";
-                echo $row[8] . " ";
-                echo $row[9] . " ";
-                echo $row[10] . " ";
-        
-                echo "<br>";
-            }*/
+          
 
             mysqli_close($con);
 
@@ -89,20 +74,6 @@
 
             $result = mysqli_query($con,$query);
 
-            /*while($row=mysqli_fetch_row($result))
-            {
-                echo $row[0] . " ";
-                echo $row[1] . " ";
-                echo $row[2] . " ";
-                echo $row[3] . " ";
-                echo $row[4] . " ";
-                echo $row[5] . " ";
-                echo $row[6] . " ";
-                echo $row[7] . " ";
-                echo $row[8] . " ";
-                echo $row[9] . " ";
-                echo $row[10] . " ";
-            }*/
 
             return $result;
         }
